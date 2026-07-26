@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCU-Fan-Page</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <!-- Naviagtion Bar -->
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mcu-phases.html">MCU Phases</a></li>
+            <li><a href="forum.html">Fan Forum</a></li>
+            <li><a href="project.html">Project</a></li>
+        </ul>
+    </nav>
+
+    <div id="forumContainer">
+        <h1>MCU Fan Forum</h1>
+            <form id="myForm" novalidate>
+            <div>
+                <!-- Name Field -->
+                <label for="name">Name:</label>
+                <input id="name" name="name" required> 
+            </div>
+
+            <div>  
+            <!-- Email Field -->
+            <label for="email">Email:</label>
+            <input id="email" name="email" required>
+            </div>
+
+            <!-- Favorite MCU Character field -->
+            <label for="userCharacter">Favorite MCU Character:</label>
+            <input type="text" id="userCharacter" placeholder="type">
+
+            <!-- Message field -->
+            <label for="userMessage">Message:</label>
+            <textarea id="userMessage" placeholder="Leave a message" rows="5"></textarea>
+            
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+
+            </form>
+
+            <!-- Error message output -->
+            <div id="formError" class="error"></div>
+            
+            <!-- Sucess message output -->
+            <div id="formMessage" class="success"></div>
+
+        </div>
+   
+    <script src="../js/forum.js"></script>
+</body>
+</html>
