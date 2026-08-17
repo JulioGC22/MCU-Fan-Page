@@ -1,6 +1,7 @@
 
-//seting up projects properties
 
+
+//seting up projects properties
 const projDoom = {
     title: "Avengers: Doomsday",
     releaseDate: "December 18, 2026",
@@ -19,6 +20,12 @@ const projBlackPanther = {
     poster: "../img/black-panther-3.jpg"
 };
 
+const projXmen = {
+    title: "X-Men",
+    releaseDate: "May 5, 2028",
+    poster: "../img/x-men.jpg"
+};
+
 const projGhostRider = {
     title: "Ghost Rider",
     releaseDate: null,
@@ -26,7 +33,7 @@ const projGhostRider = {
 };
 
 // projects craeted are now inside an array
-const projects = [projDoom, projSecretWars, projBlackPanther, projGhostRider];
+const projects = [projDoom, projSecretWars, projBlackPanther, projXmen, projGhostRider];
 
 // Release date countdown or TBD if release date not anounced 
 function daysTilRelease(releaseDate){
