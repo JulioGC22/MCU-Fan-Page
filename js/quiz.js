@@ -1,6 +1,5 @@
 
 // Questions with needed properties
-
 const q1 = {
   question: "In Iron Man (2008), what is the name of the terrorist organization that kidnaps Tony Stark?",
   choices: ["The Ten Rings", "HYDRA", "A.I.M.", "The Hand"],
@@ -107,5 +106,42 @@ const q15 = {
 };
 
 //Combining all question objects into one array
-
 const questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
+
+//Colecting the 15 array strings categories
+const allCategories = questions.map(q => q.category);
+
+//new Set() auto-removes dulpicates
+const setCategories = new Set(allCategories);
+
+//Turning back to arrays
+const uniqueCategories = Array.from(setCategories);
+
+
+
+//Phase selection option
+//connecting phaseSelect from html to js
+const phaseSelect = document.getElementById('phaseSelect');
+
+//creating option for select tag
+const allOptions = document.createElement('option');
+
+//What user sees in the dropdown
+allOptions.textContent = 'All Phases';
+
+//what js reads for 'All Phases'
+allOptions.value = 'all';
+
+//connecting all phases options to Phase Select to html
+phaseSelect.appendChild(allOptions);
+
+
+
+//Adding each Phases in the options
+//Using forEach to show every phase category and to create additional option elments
+uniqueCategories.forEach((categories) => {
+    const otherOptions = document.createElement('option');
+    otherOptions.textContent = (categories);
+    otherOptions.value = (categories);
+    phaseSelect.appendChild(otherOptions);
+});

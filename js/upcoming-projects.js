@@ -1,7 +1,7 @@
 
 
 
-//seting up projects properties
+//setting up projects properties
 const projDoom = {
     title: "Avengers: Doomsday",
     releaseDate: "December 18, 2026",
