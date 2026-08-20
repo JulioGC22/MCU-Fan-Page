@@ -37,6 +37,7 @@ const projects = [projDoom, projSecretWars, projBlackPanther, projXmen, projGhos
 
 // Release date countdown or TBD if release date not anounced 
 function daysTilRelease(releaseDate){
+        //TBD will be empty if unannounced release date, so no countdown math can run
         if(releaseDate === null){
             return "";
         }
