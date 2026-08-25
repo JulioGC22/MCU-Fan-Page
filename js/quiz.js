@@ -130,7 +130,7 @@ const allOptions = document.createElement('option');
 allOptions.textContent = 'All Phases';
 
 //what js reads for 'All Phases'
-allOptions.value = 'all';
+allOptions.value = 'All Phases';
 
 //connecting all phases options to Phase Select to html
 phaseSelect.appendChild(allOptions);
@@ -145,3 +145,43 @@ uniqueCategories.forEach((categories) => {
     otherOptions.value = (categories);
     phaseSelect.appendChild(otherOptions);
 });
+
+//Will hold the final array of questions used for this quiz
+let quizQuestions = [];
+
+//Runs when user clicks Start Quiz reads the drop down and builds the questions list for this quiz  
+document.getElementById('start-btn').addEventListener('click', function() {
+  //Storing user selection
+  const selectedPhase = phaseSelect.value;
+
+  //All questions will show if the user selects "All Phases"
+  if (selectedPhase === 'All Phases') {
+    quizQuestions = questions;
+
+  //Narrows questions down to just the ones matching the selected phase
+  } else {
+    quizQuestions = questions.filter(function(qs){
+      return selectedPhase === qs.category;
+    });
+  }
+  showQuestions(currentQuestion);
+  
+});
+
+//Tracking state for user score and current question
+let currentQuestion = 0;
+let userScore = 0;
+
+//Showing Questions
+function showQuestions(presentQuestion){
+  const container = document.getElementById('quizContainer');
+  container.textContent = ''; //Will clear the previous question
+
+  const questionText = document.createElement('p');
+  questionText.textContent = quizQuestions[presentQuestion].question;
+  container.appendChild(questionText);
+};
+
+
+
+
