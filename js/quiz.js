@@ -164,11 +164,24 @@ document.getElementById('start-btn').addEventListener('click', function() {
       return selectedPhase === qs.category;
     });
   }
+  showQuestions(currentQuestion);
   
-  //temporary
-  console.log(quizQuestions);
 });
 
-//
+//Tracking state for user score and current question
+let currentQuestion = 0;
+let userScore = 0;
+
+//Showing Questions
+function showQuestions(presentQuestion){
+  const container = document.getElementById('quizContainer');
+  container.textContent = ''; //Will clear the previous question
+
+  const questionText = document.createElement('p');
+  questionText.textContent = quizQuestions[presentQuestion].question;
+  container.appendChild(questionText);
+};
+
+
 
 
