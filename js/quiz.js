@@ -140,19 +140,19 @@ phaseSelect.appendChild(allOptions);
 //Adding each Phases in the options
 //Using forEach to show every phase category and to create additional option elments
 uniqueCategories.forEach((categories) => {
-    const otherOptions = document.createElement('option');
-    otherOptions.textContent = (categories);
-    otherOptions.value = (categories);
-    phaseSelect.appendChild(otherOptions);
+    const categoryOptions = document.createElement('option');
+    categoryOptions.textContent = (categories);
+    categoryOptions.value = (categories);
+    phaseSelect.appendChild(categoryOptions);
 });
+
+//Will hold the final array of questions used for this quiz
+let quizQuestions;
 
 //Runs when user clicks Start Quiz reads the drop down and builds the questions list for this quiz  
 document.getElementById('start-btn').addEventListener('click', function() {
   //Storing user selection
   const selectedPhase = phaseSelect.value;
-
-  //Will hold the final array of questions used for this quiz
-  let quizQuestions;
 
   //All questions will show if the user selects "All Phases"
   if (selectedPhase === 'All Phases') {
