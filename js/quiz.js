@@ -180,6 +180,13 @@ function showQuestions(presentQuestion){
   const questionText = document.createElement('p');
   questionText.textContent = quizQuestions[presentQuestion].question;
   container.appendChild(questionText);
+
+  //Multiple choice to the questions
+  quizQuestions[presentQuestion].choices.forEach(function(choice) {
+    const btn = document.createElement('button');
+    btn.textContent = choice;
+    container.appendChild(btn);
+  });
 };
 
 
