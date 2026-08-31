@@ -180,11 +180,36 @@ function showQuestions(presentQuestion){
   const questionText = document.createElement('p');
   questionText.textContent = quizQuestions[presentQuestion].question;
   container.appendChild(questionText);
+  
+  // 2 attempts max
+  let attemptsLeft = 2;
 
   //Multiple choice to the questions
   quizQuestions[presentQuestion].choices.forEach(function(choice) {
     const btn = document.createElement('button');
     btn.textContent = choice;
+
+    //Check correct/incorrect choice
+    btn.addEventListener('click', function() {
+
+      if (choice === quizQuestions[presentQuestion].correctAns) {
+        userScore ++;
+        btn.textContent = "Correct!";
+      } else {
+        //Decrement happens first. In the wrong answer path
+        attemptsLeft--; 
+
+        //Then checks the new value
+        if(attemptsLeft > 0){
+          btn.textContent = "Try again";
+        } else {
+          btn.textContent = "No more attempts";
+        }
+
+      }
+      
+    });
+
     container.appendChild(btn);
   });
 };
