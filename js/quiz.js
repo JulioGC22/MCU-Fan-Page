@@ -184,10 +184,15 @@ function showQuestions(presentQuestion){
   // 2 attempts max
   let attemptsLeft = 2;
 
-  //Multiple choice to the questions
+  //buttons created will be pushed to this empty array
+  const allBtns = [];
+
+  //Builds one button per answer choice
   quizQuestions[presentQuestion].choices.forEach(function(choice) {
     const btn = document.createElement('button');
     btn.textContent = choice;
+    //Add btn to the shared array 
+    allBtns.push(btn);
 
     //Check correct/incorrect choice
     btn.addEventListener('click', function() {
@@ -195,6 +200,10 @@ function showQuestions(presentQuestion){
       if (choice === quizQuestions[presentQuestion].correctAns) {
         userScore ++;
         btn.textContent = "Correct!";
+        //Lock all buttons once the questions is answered correctly
+        allBtns.forEach(function(oneBtn){
+          oneBtn.disabled = true;
+        });
       } else {
         //Decrement happens first. In the wrong answer path
         attemptsLeft--; 
@@ -204,6 +213,10 @@ function showQuestions(presentQuestion){
           btn.textContent = "Try again";
         } else {
           btn.textContent = "No more attempts";
+          //Lock all buttons once attempts run out
+          allBtns.forEach(function(oneBtn){
+            oneBtn.disabled = true;
+          });
         }
 
       }
