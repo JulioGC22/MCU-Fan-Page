@@ -172,8 +172,16 @@ document.getElementById('start-btn').addEventListener('click', function() {
 let currentQuestion = 0;
 let userScore = 0;
 
+
 //Showing Questions
 function showQuestions(presentQuestion){
+
+//Guard clause that stops at the index
+if (presentQuestion >= quizQuestions.length){
+  console.log("Quiz is over!");
+  return;
+}
+
   const container = document.getElementById('quizContainer');
   container.textContent = ''; //Will clear the previous question
 
@@ -187,6 +195,15 @@ function showQuestions(presentQuestion){
   //buttons created will be pushed to this empty array
   const allBtns = [];
 
+  //Advance to next question
+  const nextBtn = document.createElement('button');
+  nextBtn.textContent = "Next";
+
+  nextBtn.addEventListener('click', function() {
+    currentQuestion++ ;
+    showQuestions(currentQuestion);
+  });
+
   //Builds one button per answer choice
   quizQuestions[presentQuestion].choices.forEach(function(choice) {
     const btn = document.createElement('button');
@@ -194,16 +211,19 @@ function showQuestions(presentQuestion){
     //Add btn to the shared array 
     allBtns.push(btn);
 
+
+
     //Check correct/incorrect choice
     btn.addEventListener('click', function() {
 
       if (choice === quizQuestions[presentQuestion].correctAns) {
         userScore ++;
         btn.textContent = "Correct!";
-        //Lock all buttons once the questions is answered correctly
+        //Lock all buttons once the question is answered correctly
         allBtns.forEach(function(oneBtn){
           oneBtn.disabled = true;
         });
+        container.appendChild(nextBtn);
       } else {
         //Decrement happens first. In the wrong answer path
         attemptsLeft--; 
@@ -217,6 +237,7 @@ function showQuestions(presentQuestion){
           allBtns.forEach(function(oneBtn){
             oneBtn.disabled = true;
           });
+          container.appendChild(nextBtn);
         }
 
       }
