@@ -28,12 +28,12 @@ const projXmen = {
 
 const projGhostRider = {
     title: "Ghost Rider",
-    releaseDate: null,
+    releaseDate: "July 28, 2028",
     poster: "../img/ghost-rider.jpg"
 };
 
 // projects craeted are now inside an array
-const projects = [projDoom, projSecretWars, projBlackPanther, projXmen, projGhostRider];
+const projects = [projDoom, projSecretWars, projXmen, projGhostRider, projBlackPanther];
 
 // Release date countdown or TBD if release date not anounced 
 function daysTilRelease(releaseDate){

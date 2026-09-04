@@ -178,7 +178,7 @@ function showQuestions(presentQuestion){
 
 //Guard clause that stops at the index
 if (presentQuestion >= quizQuestions.length){
-  console.log("Quiz is over!");
+  showResults();
   return;
 }
 
@@ -249,5 +249,40 @@ if (presentQuestion >= quizQuestions.length){
 };
 
 
+function showResults(){
 
+  const container = document.getElementById('quizContainer');
+  container.textContent = ''; //Will clear the previous question
+
+  const totalScore = document.createElement('p');
+  totalScore.textContent = `You score ${userScore} out of ${quizQuestions.length}`;
+  container.appendChild(totalScore);
+
+
+  //Try again button - Goes back to the first index and score resets
+  const againBtn = document.createElement('button');
+  againBtn.textContent = 'Try Again';
+
+  againBtn.addEventListener('click', function() {
+    currentQuestion = 0;
+    userScore = 0;
+    showQuestions(currentQuestion);
+  });
+
+  container.appendChild(againBtn);
+
+  //Back to selection button - clears the questions selected and resets user score
+  const resetBtn = document.createElement('button');
+  resetBtn.textContent = 'Back to Selection';
+
+  resetBtn.addEventListener('click', function() {
+    currentQuestion = 0;
+    userScore = 0;
+    container.textContent = '';
+
+  });  
+
+  container.appendChild(resetBtn);
+
+};
 
