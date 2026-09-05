@@ -11,7 +11,7 @@ const projDoom = {
 const projSecretWars = {
     title: "Avengers: Secret Wars",
     releaseDate: "December 17, 2027",
-    poster: "../img/avangers-secret-wars.jpg"
+    poster: "../img/secret-wars.jpg"
 };
 
 const projBlackPanther = {
