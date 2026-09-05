@@ -5,31 +5,31 @@
 const projDoom = {
     title: "Avengers: Doomsday",
     releaseDate: "December 18, 2026",
-    poster: "../img/avengers-doomsday.jpg"
+    poster: "img/avengers-doomsday.jpg"
 };
 
 const projSecretWars = {
     title: "Avengers: Secret Wars",
     releaseDate: "December 17, 2027",
-    poster: "../img/secret-wars.jpg"
+    poster: "img/secret-wars.jpg"
 };
 
 const projBlackPanther = {
     title: "Black Panther III",
     releaseDate: "December 15, 2028",
-    poster: "../img/black-panther-3.jpg"
+    poster: "img/black-panther-3.jpg"
 };
 
 const projXmen = {
     title: "X-Men",
     releaseDate: "May 5, 2028",
-    poster: "../img/x-men.jpg"
+    poster: "img/x-men.jpg"
 };
 
 const projGhostRider = {
     title: "Ghost Rider",
     releaseDate: "July 28, 2028",
-    poster: "../img/ghost-rider.jpg"
+    poster: "img/ghost-rider.jpg"
 };
 
 // projects craeted are now inside an array

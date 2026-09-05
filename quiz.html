@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCU-Fan-Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <!-- Naviagtion Bar -->
 
-     <nav class="nav">
+    <nav class="nav">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="mcu-phases.html">MCU Phases</a></li>
@@ -20,18 +20,21 @@
         </ul>
     </nav>
 
-    <!-- Upcoming Projects  -->
+    <!-- MCU QUIZ  -->
 
-     <div id="projects">
-        <h1>Upcoming Films</h1>
+     <div id="quiz">
+        <h1>MCU Quiz</h1>
         <br>
+
+        <select id="phaseSelect"></select>
+        <button type="button" id="start-btn">Start Quiz</button>
+        <div id="quizContainer"></div>
+
    
      </div>
 
 
-     <script src="../js/upcoming-projects.js"></script>
+     <script src="js/quiz.js"></script>
 
 </body>
 </html>
-
-       
